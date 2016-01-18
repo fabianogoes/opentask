@@ -26,7 +26,7 @@ usando as [instruções contidas na wiki](https://gist.github.com/55ed9eed0664d2
 
 License 
 -------
-[![Fork][4]][6]
+[![Fork][4]][6]   
 Licensed under an [MIT-style permissive license][3].
 
 
