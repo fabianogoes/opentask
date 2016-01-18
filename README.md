@@ -1,6 +1,22 @@
 # Open Task   
 ##### Open Source Project to Manager Task   
 
+### Módulos
+* Criar/Manter Tarefas
+* Criar/Manter Projeto
+* Criar/Manter Cliente
+* Criar/Manter Usuário
+* Controle de Perfil de Usuário
+* Histórico de Atividades das Tarefas
+* Envio de Email por Atividade da Tarefa
+* Controle de envolvidos na Tarefa
+* Controle de Observadores da Tarefa
+* Controle de Tarefas por Backlog
+* Controle de Tarefas po Spring
+* Quadro Kanban
+
+
+
 Como Contribuir
 ---------------
 
