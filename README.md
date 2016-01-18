@@ -15,5 +15,5 @@ Veja o video que explica o processo de fork, clone, push e pull-request:
 http://pythonclub.com.br/como-fazer-fork-clone-push-pull-request-no-github.html
 
 
-[0]: https://github.com/fabianogoes/controleaula/blob/master/src/main/webapp/WEB-INF/static/img/github-fork-btn.png
+[0]: https://github.com/fabianogoes/opentask/blob/master/doc/github-fork-btn.png
 [1]: https://github.com/fabianogoes/opentask/fork
