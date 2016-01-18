@@ -26,10 +26,13 @@ usando as [instruções contidas na wiki](https://gist.github.com/55ed9eed0664d2
 
 License 
 -------
-[![Fork][4]][6]   
-Licensed under an [MIT-style permissive license][3].
+[![MIT][4]][6]   
+Licensed under an [MIT-style permissive license][3].   
 
-
+Open Source 
+-----------
+[![Open Source][5]][7]   
+Licensed under an [MIT-style permissive license][3].   
 
 
 [0]: https://github.com/fabianogoes/opentask/blob/master/doc/github-fork-btn.png
@@ -38,4 +41,5 @@ Licensed under an [MIT-style permissive license][3].
 [4]: https://github.com/fabianogoes/opentask/blob/master/doc/mit-license.png
 [5]: https://github.com/fabianogoes/opentask/blob/master/doc/opensource-iniciative.png
 [6]: https://opensource.org/licenses/MIT
+[7]: https://en.wikipedia.org/wiki/Open_Source_Initiative
 
