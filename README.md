@@ -32,7 +32,6 @@ Licensed under an [MIT-style permissive license][3].
 Open Source 
 -----------
 [![Open Source][5]][7]   
-Licensed under an [MIT-style permissive license][3].   
 
 
 [0]: https://github.com/fabianogoes/opentask/blob/master/doc/github-fork-btn.png
