@@ -26,8 +26,9 @@ usando as [instruções contidas na wiki](https://gist.github.com/55ed9eed0664d2
 
 License
 -------
-Licensed under an [MIT-style permissive license][6].
+Licensed under an [MIT-style permissive license][3].
 
 
 [0]: https://github.com/fabianogoes/opentask/blob/master/doc/github-fork-btn.png
 [1]: https://github.com/fabianogoes/opentask/fork
+[3]: https://github.com/fabianogoes/controleaula/blob/master/LICENSE
