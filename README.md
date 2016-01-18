@@ -11,6 +11,7 @@
 * Envio de Email por Atividade da Tarefa
 * Controle de envolvidos na Tarefa
 * Controle de Observadores da Tarefa
+* Timeline do Usuário
 * Controle de Tarefas por Backlog
 * Controle de Tarefas po Spring
 * Quadro Kanban
