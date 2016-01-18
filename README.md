@@ -5,9 +5,11 @@ Como Contribuir
 ---------------
 
 * Faça um fork deste repositório, clicando no botão [![Fork][0]][1], na parte superior direita da pagina do Github
-* Clone seu fork:
+* Faça um clone o repositório/fork do seu github:
 
-    ``git clone --recursive https://github.com/SEU_USUARIO_DO_GITHUB/opentask.git``
+    ```html
+    git clone --recursive https://github.com/SEU_USUARIO_DO_GITHUB/opentask.git
+    ```
 
 * Após criar ou editar algum código/issue faça um pull-request para que sua implementação entre em produção.
 
