@@ -1,5 +1,5 @@
 # Open Task   
-### Open Source Project to Manager Task   
+##### Open Source Project to Manager Task   
 
 Como Contribuir
 ---------------
@@ -15,6 +15,18 @@ Como Contribuir
 
 Veja o video que explica o processo de fork, clone, push e pull-request:
 http://pythonclub.com.br/como-fazer-fork-clone-push-pull-request-no-github.html
+
+Sincronizando seu fork
+----------------------
+
+Caso você já tenha feito fork a algum tempo você tem duas opções para garantir que
+estará trabalhando com as ultimas alterações, que pode ser simplesmente deletar
+seu fork e fazer um novo ou sincronizar seu fork com o repositório de origem
+usando as [instruções contidas na wiki](https://gist.github.com/55ed9eed0664d2f90f9c.git)
+
+License
+-------
+Licensed under an [MIT-style permissive license][6].
 
 
 [0]: https://github.com/fabianogoes/opentask/blob/master/doc/github-fork-btn.png
