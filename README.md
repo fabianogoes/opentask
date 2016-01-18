@@ -24,8 +24,9 @@ estará trabalhando com as ultimas alterações, que pode ser simplesmente delet
 seu fork e fazer um novo ou sincronizar seu fork com o repositório de origem
 usando as [instruções contidas na wiki](https://gist.github.com/55ed9eed0664d2f90f9c.git)
 
-License [![Fork][4]][1]
+License 
 -------
+[![Fork][4]][6]
 Licensed under an [MIT-style permissive license][3].
 
 
@@ -36,4 +37,5 @@ Licensed under an [MIT-style permissive license][3].
 [3]: https://github.com/fabianogoes/opentask/blob/master/LICENSE
 [4]: https://github.com/fabianogoes/opentask/blob/master/doc/mit-license.png
 [5]: https://github.com/fabianogoes/opentask/blob/master/doc/opensource-iniciative.png
+[6]: https://opensource.org/licenses/MIT
 
