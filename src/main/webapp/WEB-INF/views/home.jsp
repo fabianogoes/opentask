@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Open Task - Open Source Project to Manager Task">
     <meta name="author" content="Fabiano Góes">
-    <link rel="shortcut icon" href="${ pageContext.request.contextPath }/resources/img/opensource-logo.png" />
+    <link rel="shortcut icon" href="${ pageContext.request.contextPath }/resources/img/opentask-logo.png" />
 
     <title>${ initParam.project }</title>
 
@@ -47,7 +47,7 @@
 	            		<span class="icon-bar"></span>
 	          	</button>
 	          	<a class="navbar-brand" href="#">
-	          		<img alt="Open Task" height="40px" src="${ pageContext.request.contextPath }/resources/img/opensource-logo.png">
+	          		<img alt="Open Task" height="40px" src="${ pageContext.request.contextPath }/resources/img/opentask-logo.png">
 	          	</a>
 	        </div>
         		
@@ -79,7 +79,7 @@
 	<div class="container">
 
 		<div class="jumbotron">
-        		<h1><img alt="Open Task" height="150px" src="${ pageContext.request.contextPath }/resources/img/opensource-logo.png"> ${ initParam.project }.</h1>
+        		<h1><img alt="Open Task" height="150px" src="${ pageContext.request.contextPath }/resources/img/opentask-logo.png"> ${ initParam.project }.</h1>
         		<hr/>
         		<p>Open Source Project to Manager Task.</p>
       	</div>
@@ -87,7 +87,7 @@
 		<footer class="footer">
 			<hr/>
 			<span class="pull-right">
-				<img alt="Open Task" height="20px" src="${ pageContext.request.contextPath }/resources/img/opensource-logo.png"> 
+				<img alt="Open Task" height="20px" src="${ pageContext.request.contextPath }/resources/img/opentask-logo.png"> 
 				<a href="#">
 					${ initParam.project }.in 2016 - ${ initParam.version }
 				</a>
