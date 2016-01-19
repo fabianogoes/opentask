@@ -1,4 +1,4 @@
-# Open Task   
+# [![Open Task][8] Open Task   
 ##### Open Source Project to Manager Task   
 
 ### Módulos
@@ -58,4 +58,6 @@ Open Source
 [5]: https://github.com/fabianogoes/opentask/blob/master/doc/opensource-iniciative.png
 [6]: https://opensource.org/licenses/MIT
 [7]: https://en.wikipedia.org/wiki/Open_Source_Initiative
+[8]: https://github.com/fabianogoes/opentask/blob/master/src/main/webapp/resources/img/opentask-logo.png
+
 
