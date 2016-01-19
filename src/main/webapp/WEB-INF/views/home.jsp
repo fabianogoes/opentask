@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -6,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Open Task - Open Source Project to Manager Task">
-    <meta name="author" content="Fabiano Góes">
+    <meta name="author" content="Fabiano GÃ³es">
     <link rel="shortcut icon" href="${ pageContext.request.contextPath }/resources/img/opentask-logo.png" />
 
     <title>${ initParam.project }</title>
@@ -56,14 +58,14 @@
 	          	<ul class="nav navbar-nav navbar-right">
 	            		<li class="dropdown">
 	              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	              			<img alt="Usuário Logado" height="40px" src="${ pageContext.request.contextPath }/resources/img/default-avatar.png"> <span class="caret"></span>
+	              			<img alt="UsuÃ¡rio Logado" height="40px" src="${ pageContext.request.contextPath }/resources/img/default-avatar.png"> <span class="caret"></span>
 	              		</a>
 	              		<ul class="dropdown-menu">
-	              			<li class="dropdown-header">Usuário logado:</li>
-	                			<li><a href="#">Fabiano Góes</a></li>
+	              			<li class="dropdown-header">UsuÃ¡rio logado:</li>
+	                			<li><a href="#">Fabiano GÃ³es</a></li>
 	                			<li role="separator" class="divider"></li>
 	                			<li><a href="#">Perfil</a></li>
-	                			<li><a href="#">Configurações</a></li>
+	                			<li><a href="#">ConfiguraÃ§Ãµes</a></li>
 	                			<li role="separator" class="divider"></li>
 	                			<li><a href="#">Sair</a></li>
 	              		</ul>
