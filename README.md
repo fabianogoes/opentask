@@ -1,4 +1,4 @@
-# [![Open Task][8] Open Task   
+# [![Open Task][8]] Open Task   
 ##### Open Source Project to Manager Task   
 
 ### Módulos
