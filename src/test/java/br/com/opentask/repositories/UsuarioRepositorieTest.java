@@ -8,12 +8,14 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.opentask.models.Usuario;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/applicationContext-test.xml")
+@Transactional // <== Não faz commit no banco, na grava nenhum registro
 public class UsuarioRepositorieTest {
 
 	@Autowired
