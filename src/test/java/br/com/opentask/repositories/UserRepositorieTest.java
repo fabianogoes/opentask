@@ -30,7 +30,7 @@ public class UserRepositorieTest {
 //		usuario.setSenha("123");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		User usuario = userRepositorie.save( UserBuilder.build() );
+		User usuario = userRepositorie.save( new UserBuilder().build() );
 		Assert.assertTrue("o id deve ser maior que 0 depois de inserido", usuario.getId() > 0);
 	}
 	
@@ -43,8 +43,7 @@ public class UserRepositorieTest {
 //		usuario.setSenha("123");
 //		usuario = usuarioRepositorie.save(usuario);		
 		
-		User usuario = userRepositorie.save( UserBuilder.build() );
-		usuario.setName("FelixPinho");
+		User usuario = userRepositorie.save( new UserBuilder().withName("FelixPinho").build() );
 		usuario = userRepositorie.save(usuario);
 		Assert.assertEquals("O Valor alterado do nome do usuário deve ser FelixPinho", "FelixPinho", usuario.getName());
 		
@@ -59,7 +58,7 @@ public class UserRepositorieTest {
 //		usuario.setSenha("123456");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		User user = userRepositorie.save( UserBuilder.build() );
+		User user = userRepositorie.save( new UserBuilder().build() );
 		Long id = user.getId();
 		userRepositorie.delete(user);
 		user = userRepositorie.findOne(id);
@@ -75,7 +74,7 @@ public class UserRepositorieTest {
 //		usuario.setSenha("654321");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		Long id = userRepositorie.save( UserBuilder.withName("Klayton") ).getId();
+		Long id = userRepositorie.save( new UserBuilder().withName("Klayton").build() ).getId();
 		User user = userRepositorie.findOne(id);
 		
 		Assert.assertNotNull("Objeto não pode ser nulla.:", user);
@@ -92,7 +91,7 @@ public class UserRepositorieTest {
 //		usuario.setSenha("654321");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		userRepositorie.save( UserBuilder.build() );
+		userRepositorie.save( new UserBuilder().build() );
 		List<User> users = (List<User>) userRepositorie.findAll();
 		
 		Assert.assertNotNull("Lista nao pode ser nula", users );
@@ -109,7 +108,7 @@ public class UserRepositorieTest {
 //		usuario.setSenha("2222");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		User user = userRepositorie.save( UserBuilder.withName("Felipe Santaniello") );
+		User user = userRepositorie.save( new UserBuilder().withName("Felipe Santaniello").build() );
 		List<User> users = userRepositorie.findByName(user.getName());	
 		
 		Assert.assertNotNull("Lista nao pode ser nula", users );
@@ -121,22 +120,22 @@ public class UserRepositorieTest {
 }
 
 class UserBuilder{
-	private static User user = new User(null, "TESTE", "teste", "123");
+	private User user = new User(null, "TESTE", "teste", "123");
 	
-	public static User withName(String name){
+	public UserBuilder withName(String name){
 		user.setName(name);
-		return user;
+		return this;
 	}
-	public static User withLogin(String login){
+	public UserBuilder withLogin(String login){
 		user.setLogin(login);
-		return user;
+		return this;
 	}
-	public static User withPassword(String password){
+	public UserBuilder withPassword(String password){
 		user.setPassword(password);
-		return user;
+		return this;
 	}
 	
-	public static User build(){
+	public User build(){
 		return user;
 	}
 }
