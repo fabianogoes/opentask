@@ -3,7 +3,6 @@ package br.com.opentask.repositories;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +21,6 @@ public class UsuarioRepositorieTest {
 	@Autowired
 	private UsuarioRepositorie usuarioRepositorie; 
 	
-	@Before
-	public void before(){
-		usuarioRepositorie.save( new UsuarioBuilder().build() );
-	}
-	
 	@Test
 	public void testInsertUsuario(){
 		// Fabiano
@@ -36,7 +30,7 @@ public class UsuarioRepositorieTest {
 //		usuario.setSenha("123");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		Usuario usuario = usuarioRepositorie.save(new UsuarioBuilder().build());
+		Usuario usuario = usuarioRepositorie.save( UsuarioBuilder.build() );
 		Assert.assertTrue("o id deve ser maior que 0 depois de inserido", usuario.getId() > 0);
 	}
 	
@@ -49,7 +43,7 @@ public class UsuarioRepositorieTest {
 //		usuario.setSenha("123");
 //		usuario = usuarioRepositorie.save(usuario);		
 		
-		Usuario usuario = usuarioRepositorie.save( new UsuarioBuilder().build() );
+		Usuario usuario = usuarioRepositorie.save( UsuarioBuilder.build() );
 		usuario.setNome("FelixPinho");
 		usuario = usuarioRepositorie.save(usuario);
 		Assert.assertEquals("O Valor alterado do nome do usuário deve ser FelixPinho", "FelixPinho", usuario.getNome());
@@ -65,7 +59,7 @@ public class UsuarioRepositorieTest {
 //		usuario.setSenha("123456");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		Usuario usuario = usuarioRepositorie.save( new UsuarioBuilder().build() );
+		Usuario usuario = usuarioRepositorie.save( UsuarioBuilder.build() );
 		Long id = usuario.getId();
 		usuarioRepositorie.delete(usuario);
 		usuario = usuarioRepositorie.findOne(id);
@@ -81,7 +75,7 @@ public class UsuarioRepositorieTest {
 //		usuario.setSenha("654321");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		Long id = usuarioRepositorie.save( new UsuarioBuilder().build() ).getId();
+		Long id = usuarioRepositorie.save( UsuarioBuilder.withNome("Klayton") ).getId();
 		Usuario usuario = usuarioRepositorie.findOne(id);
 		
 		Assert.assertNotNull("Objeto não pode ser nulla.:", usuario);
@@ -98,7 +92,7 @@ public class UsuarioRepositorieTest {
 //		usuario.setSenha("654321");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		usuarioRepositorie.save( new UsuarioBuilder().build() );
+		usuarioRepositorie.save( UsuarioBuilder.build() );
 		List<Usuario> usuarios = (List<Usuario>) usuarioRepositorie.findAll();
 		
 		Assert.assertNotNull("Lista nao pode ser nula", usuarios );
@@ -115,7 +109,7 @@ public class UsuarioRepositorieTest {
 //		usuario.setSenha("2222");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		Usuario usuario = new UsuarioBuilder().build();
+		Usuario usuario = usuarioRepositorie.save( UsuarioBuilder.withNome("Felipe Santaniello") );
 		List<Usuario> usuarios = usuarioRepositorie.findByNome(usuario.getNome());	
 		
 		Assert.assertNotNull("Lista nao pode ser nula", usuarios );
@@ -127,25 +121,22 @@ public class UsuarioRepositorieTest {
 }
 
 class UsuarioBuilder{
-	private Usuario usuario;
-
-	public UsuarioBuilder(){
-		this.usuario = new Usuario(null, "TESTE", "teste", "123");
+	private static Usuario usuario = new Usuario(null, "TESTE", "teste", "123");
+	
+	public static Usuario withNome(String nome){
+		usuario.setNome(nome);
+		return usuario;
 	}
-	public UsuarioBuilder comNome(String nome){
-		this.usuario.setNome(nome);
-		return this;
+	public static Usuario withLogin(String login){
+		usuario.setLogin(login);
+		return usuario;
 	}
-	public UsuarioBuilder comLogin(String login){
-		this.usuario.setLogin(login);
-		return this;
-	}
-	public UsuarioBuilder comSenha(String senha){
-		this.usuario.setSenha(senha);
-		return this;
+	public static Usuario withSenha(String senha){
+		usuario.setSenha(senha);
+		return usuario;
 	}
 	
-	public Usuario build(){
-		return this.usuario;
+	public static Usuario build(){
+		return usuario;
 	}
 }
