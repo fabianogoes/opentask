@@ -5,22 +5,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Usuario {
+public class User {
 
 	@Id
 	@GeneratedValue
 	private Long id;
-	private String nome;
+	private String name;
 	private String login;
-	private String senha;
+	private String password;
 
-	public Usuario() {
+	public User() {
 	}
 
-	public Usuario(Long id, String nome, String senha, String login) {
+	public User(Long id, String name, String password, String login) {
 		this.id = id;
-		this.nome = nome;
-		this.senha = senha;
+		this.name = name;
+		this.password = password;
 		this.login = login;
 	}
 
@@ -32,20 +32,20 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getLogin() {
@@ -72,7 +72,7 @@ public class Usuario {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Usuario other = (Usuario) obj;
+		User other = (User) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -83,7 +83,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nome=" + nome + ", login=" + login + ", senha=" + senha + "]";
+		return "Usuario [id=" + id + ", name=" + name + ", login=" + login + ", password=" + password + "]";
 	}
 
 }

@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.opentask.models.Usuario;
+import br.com.opentask.models.User;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -30,7 +30,7 @@ public class UsuarioRepositorieTest {
 //		usuario.setSenha("123");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		Usuario usuario = usuarioRepositorie.save( UsuarioBuilder.build() );
+		User usuario = usuarioRepositorie.save( UsuarioBuilder.build() );
 		Assert.assertTrue("o id deve ser maior que 0 depois de inserido", usuario.getId() > 0);
 	}
 	
@@ -43,10 +43,10 @@ public class UsuarioRepositorieTest {
 //		usuario.setSenha("123");
 //		usuario = usuarioRepositorie.save(usuario);		
 		
-		Usuario usuario = usuarioRepositorie.save( UsuarioBuilder.build() );
-		usuario.setNome("FelixPinho");
+		User usuario = usuarioRepositorie.save( UsuarioBuilder.build() );
+		usuario.setName("FelixPinho");
 		usuario = usuarioRepositorie.save(usuario);
-		Assert.assertEquals("O Valor alterado do nome do usuário deve ser FelixPinho", "FelixPinho", usuario.getNome());
+		Assert.assertEquals("O Valor alterado do nome do usuário deve ser FelixPinho", "FelixPinho", usuario.getName());
 		
 	}
 	
@@ -59,7 +59,7 @@ public class UsuarioRepositorieTest {
 //		usuario.setSenha("123456");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		Usuario usuario = usuarioRepositorie.save( UsuarioBuilder.build() );
+		User usuario = usuarioRepositorie.save( UsuarioBuilder.build() );
 		Long id = usuario.getId();
 		usuarioRepositorie.delete(usuario);
 		usuario = usuarioRepositorie.findOne(id);
@@ -76,10 +76,10 @@ public class UsuarioRepositorieTest {
 //		usuario = usuarioRepositorie.save(usuario);
 		
 		Long id = usuarioRepositorie.save( UsuarioBuilder.withNome("Klayton") ).getId();
-		Usuario usuario = usuarioRepositorie.findOne(id);
+		User usuario = usuarioRepositorie.findOne(id);
 		
 		Assert.assertNotNull("Objeto não pode ser nulla.:", usuario);
-		Assert.assertEquals("O usuario a ser buscado deve ser o Klayton", "Klayton", usuario.getNome());
+		Assert.assertEquals("O usuario a ser buscado deve ser o Klayton", "Klayton", usuario.getName());
 	}
 	
 	@Test
@@ -93,7 +93,7 @@ public class UsuarioRepositorieTest {
 //		usuario = usuarioRepositorie.save(usuario);
 		
 		usuarioRepositorie.save( UsuarioBuilder.build() );
-		List<Usuario> usuarios = (List<Usuario>) usuarioRepositorie.findAll();
+		List<User> usuarios = (List<User>) usuarioRepositorie.findAll();
 		
 		Assert.assertNotNull("Lista nao pode ser nula", usuarios );
 		Assert.assertTrue("A lista Deve ser  maior que 0", usuarios.size() > 0);
@@ -109,8 +109,8 @@ public class UsuarioRepositorieTest {
 //		usuario.setSenha("2222");
 //		usuario = usuarioRepositorie.save(usuario);
 		
-		Usuario usuario = usuarioRepositorie.save( UsuarioBuilder.withNome("Felipe Santaniello") );
-		List<Usuario> usuarios = usuarioRepositorie.findByNome(usuario.getNome());	
+		User usuario = usuarioRepositorie.save( UsuarioBuilder.withNome("Felipe Santaniello") );
+		List<User> usuarios = usuarioRepositorie.findByNome(usuario.getName());	
 		
 		Assert.assertNotNull("Lista nao pode ser nula", usuarios );
 		Assert.assertTrue("A Lista deve ser maior que 0", usuarios.size() > 0);
@@ -121,22 +121,22 @@ public class UsuarioRepositorieTest {
 }
 
 class UsuarioBuilder{
-	private static Usuario usuario = new Usuario(null, "TESTE", "teste", "123");
+	private static User usuario = new User(null, "TESTE", "teste", "123");
 	
-	public static Usuario withNome(String nome){
-		usuario.setNome(nome);
+	public static User withNome(String nome){
+		usuario.setName(nome);
 		return usuario;
 	}
-	public static Usuario withLogin(String login){
+	public static User withLogin(String login){
 		usuario.setLogin(login);
 		return usuario;
 	}
-	public static Usuario withSenha(String senha){
-		usuario.setSenha(senha);
+	public static User withSenha(String senha){
+		usuario.setPassword(senha);
 		return usuario;
 	}
 	
-	public static Usuario build(){
+	public static User build(){
 		return usuario;
 	}
 }
