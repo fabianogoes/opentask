@@ -16,13 +16,13 @@ import br.com.opentask.models.User;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/applicationContext-test.xml")
 @Transactional // <== Não faz commit no banco, na grava nenhum registro
-public class UsuarioRepositorieTest {
+public class UserRepositorieTest {
 
 	@Autowired
 	private UserRepositorie usuarioRepositorie; 
 	
 	@Test
-	public void testInsertUsuario(){
+	public void testInsertUser(){
 		// Fabiano
 //		Usuario usuario = new Usuario();
 //		usuario.setNome("Fabiano");
@@ -35,7 +35,7 @@ public class UsuarioRepositorieTest {
 	}
 	
 	@Test
-	public void testUpdateUsuario(){
+	public void testUpdateUser(){
 		// FelixPinho
 //		Usuario usuario = new Usuario();
 //		usuario.setNome("Fabiano");
@@ -51,7 +51,7 @@ public class UsuarioRepositorieTest {
 	}
 	
 	@Test
-	public void testDeleteUsuario() {
+	public void testDeleteUser() {
 		// Diego
 //		Usuario usuario = new Usuario();
 //		usuario.setLogin("ddamaceno");
@@ -100,7 +100,7 @@ public class UsuarioRepositorieTest {
 	}
 	
 	@Test
-	public void testFindByNome(){
+	public void testFindByName(){
 		// Felipe Santaniello
 //		List<Usuario> usuarios = null;
 //		Usuario usuario = new Usuario();
