@@ -19,7 +19,7 @@ import br.com.opentask.models.User;
 public class UsuarioRepositorieTest {
 
 	@Autowired
-	private UsuarioRepositorie usuarioRepositorie; 
+	private UserRepositorie usuarioRepositorie; 
 	
 	@Test
 	public void testInsertUsuario(){
@@ -110,7 +110,7 @@ public class UsuarioRepositorieTest {
 //		usuario = usuarioRepositorie.save(usuario);
 		
 		User usuario = usuarioRepositorie.save( UsuarioBuilder.withNome("Felipe Santaniello") );
-		List<User> usuarios = usuarioRepositorie.findByNome(usuario.getName());	
+		List<User> usuarios = usuarioRepositorie.findByName(usuario.getName());	
 		
 		Assert.assertNotNull("Lista nao pode ser nula", usuarios );
 		Assert.assertTrue("A Lista deve ser maior que 0", usuarios.size() > 0);

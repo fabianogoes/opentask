@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import br.com.opentask.models.User;
 
 @Repository
-public interface UsuarioRepositorie extends CrudRepository<User, Long> {
+public interface UserRepositorie extends CrudRepository<User, Long> {
 
-	List<User> findByNome(String nome);
+	List<User> findByName(String name);
 
 }
