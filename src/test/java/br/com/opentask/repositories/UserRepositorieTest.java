@@ -24,12 +24,6 @@ public class UserRepositorieTest {
 	@Test
 	public void testInsertUser(){
 		// Fabiano
-//		Usuario usuario = new Usuario();
-//		usuario.setNome("Fabiano");
-//		usuario.setLogin("fgoes");
-//		usuario.setSenha("123");
-//		usuario = usuarioRepositorie.save(usuario);
-		
 		User usuario = userRepositorie.save( new UserBuilder().build() );
 		Assert.assertTrue("o id deve ser maior que 0 depois de inserido", usuario.getId() > 0);
 	}
@@ -37,27 +31,20 @@ public class UserRepositorieTest {
 	@Test
 	public void testUpdateUser(){
 		// FelixPinho
-//		Usuario usuario = new Usuario();
-//		usuario.setNome("Fabiano");
-//		usuario.setLogin("fgoes");
-//		usuario.setSenha("123");
-//		usuario = usuarioRepositorie.save(usuario);		
+		User usuarioInsert = userRepositorie.save( new UserBuilder().build() );
+		Assert.assertTrue("o id deve ser maior que 0 depois de inserido", usuarioInsert.getId() > 0);
 		
-		User usuario = userRepositorie.save( new UserBuilder().withName("FelixPinho").build() );
-		usuario = userRepositorie.save(usuario);
-		Assert.assertEquals("O Valor alterado do nome do usuário deve ser FelixPinho", "FelixPinho", usuario.getName());
+		User usuarioUpdate = userRepositorie.findOne(usuarioInsert.getId());
+		usuarioUpdate.setName("FelixPinho");
+		usuarioUpdate = userRepositorie.save( usuarioUpdate );
+		
+		Assert.assertEquals("O Valor alterado do nome do usuário deve ser FelixPinho", "FelixPinho", usuarioUpdate.getName());
 		
 	}
 	
 	@Test
 	public void testDeleteUser() {
 		// Diego
-//		Usuario usuario = new Usuario();
-//		usuario.setLogin("ddamaceno");
-//		usuario.setNome("Diego");
-//		usuario.setSenha("123456");
-//		usuario = usuarioRepositorie.save(usuario);
-		
 		User user = userRepositorie.save( new UserBuilder().build() );
 		Long id = user.getId();
 		userRepositorie.delete(user);
@@ -68,12 +55,6 @@ public class UserRepositorieTest {
 	@Test
 	public void testFindOneUser(){
 		// Klayton
-//		Usuario usuario = new Usuario();
-//		usuario.setLogin("ksouza");
-//		usuario.setNome("Klayton");
-//		usuario.setSenha("654321");
-//		usuario = usuarioRepositorie.save(usuario);
-		
 		Long id = userRepositorie.save( new UserBuilder().withName("Klayton").build() ).getId();
 		User user = userRepositorie.findOne(id);
 		
@@ -84,13 +65,6 @@ public class UserRepositorieTest {
 	@Test
 	public void testFindAllUsers(){
 		// Lucas
-//		List<Usuario> usuarios = null;
-//		Usuario usuario = new Usuario();
-//		usuario.setLogin("lmarchetto");
-//		usuario.setNome("Lucas");
-//		usuario.setSenha("654321");
-//		usuario = usuarioRepositorie.save(usuario);
-		
 		userRepositorie.save( new UserBuilder().build() );
 		List<User> users = (List<User>) userRepositorie.findAll();
 		
@@ -101,13 +75,6 @@ public class UserRepositorieTest {
 	@Test
 	public void testFindByName(){
 		// Felipe Santaniello
-//		List<Usuario> usuarios = null;
-//		Usuario usuario = new Usuario();
-//		usuario.setLogin("fsantaniello");
-//		usuario.setNome("Felipe Santaniello");
-//		usuario.setSenha("2222");
-//		usuario = usuarioRepositorie.save(usuario);
-		
 		User user = userRepositorie.save( new UserBuilder().withName("Felipe Santaniello").build() );
 		List<User> users = userRepositorie.findByName(user.getName());	
 		
