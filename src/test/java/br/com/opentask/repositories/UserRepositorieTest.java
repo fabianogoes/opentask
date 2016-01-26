@@ -84,11 +84,26 @@ public class UserRepositorieTest {
 		boolean exist = users.contains( user );
 		Assert.assertTrue("Deve existir um Usuario com o Nome Felipe Santaniello", exist);
 	}
+	
+	@Test
+	public void testFindByEmail() {
+		User user = userRepositorie.save(new UserBuilder().withEmail("diego@diego.com").build());
+		Assert.assertTrue("O id deve ser maior que 0 após o save", user.getId() > 0);
+		User userFind = userRepositorie.findByEmail("diego@diego.com");
+		
+		Assert.assertNotNull("O usuário deve ser diferente de nulo após o find pelo e-mail", userFind);
+		Assert.assertEquals("O e-mail deve ser igual ao inserido e pesquisado", user.getEmail(), userFind.getEmail());
+	}
+	
 }
 
 class UserBuilder{
-	private User user = new User(null, "TESTE", "teste", "123");
+	private User user = new User(null, "TEST", "test", "123", "test@test.com");
 	
+	public UserBuilder withName(Long id){
+		user.setId(id);
+		return this;
+	}
 	public UserBuilder withName(String name){
 		user.setName(name);
 		return this;
@@ -99,6 +114,11 @@ class UserBuilder{
 	}
 	public UserBuilder withPassword(String password){
 		user.setPassword(password);
+		return this;
+	}
+	
+	public UserBuilder withEmail(String email) {
+		user.setEmail(email);
 		return this;
 	}
 	
