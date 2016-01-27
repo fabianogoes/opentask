@@ -5,13 +5,11 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.opentask.models.User;
+import br.com.opentask.models.Category;
 
 @Repository
-public interface UserRepositorie extends CrudRepository<User, Long> {
+public interface CategoryRepositorie extends CrudRepository<Category, Long>{
 
-	List<User> findByName(String name);
-
-	User findByEmail(String email);
+	List<Category> findByDescriptionContaining(String description);
 
 }
