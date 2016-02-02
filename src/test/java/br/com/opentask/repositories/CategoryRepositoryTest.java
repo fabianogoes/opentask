@@ -14,11 +14,11 @@ import br.com.opentask.models.Category;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/applicationContext-test.xml")
-@Transactional // <== Não faz commit no banco, na grava nenhum registro
-public class CategoryRepositorieTest {
+@Transactional // <== Não faz commit no banco, não grava nenhum registro
+public class CategoryRepositoryTest {
 	
 	@Autowired
-	private CategoryRepositorie repositorie;
+	private CategoryRepository repositorie;
 	
 	@Test
 	public void testInsertCategory(){

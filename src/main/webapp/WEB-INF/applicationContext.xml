@@ -26,6 +26,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="br.com.opentask.controllers" />
+	<context:component-scan base-package="br.com.opentask.repositories" />
 	
    <beans:bean id="dsProducao" class="org.springframework.jdbc.datasource.DriverManagerDataSource">        
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
