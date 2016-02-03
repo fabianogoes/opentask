@@ -16,10 +16,10 @@ import br.com.opentask.models.User;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/applicationContext-test.xml")
 @Transactional // <== Não faz commit no banco, na grava nenhum registro
-public class UserRepositorieTest {
+public class UserRepositoryTest {
 
 	@Autowired
-	private UserRepositorie userRepositorie; 
+	private UserRepository userRepositorie; 
 	
 	@Test
 	public void testInsertUser(){
