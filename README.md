@@ -41,22 +41,20 @@ estará trabalhando com as ultimas alterações, que pode ser simplesmente delet
 seu fork e fazer um novo ou sincronizar seu fork com o repositório de origem
 usando as [instruções contidas na wiki](https://gist.github.com/55ed9eed0664d2f90f9c.git)
 
-License 
+License
 -------
 [![MIT][4]][6]   
 Licensed under an [MIT-style permissive license][3].   
 
-Open Source 
+Open Source
 -----------
 [![Open Source][5]][7]   
 
 
-[0]: https://github.com/fabianogoes/opentask/blob/master/doc/github-fork-btn.png
+[0]: https://raw.githubusercontent.com/fabianogoes/opentask/master/doc/github-fork-btn.png
 [1]: https://github.com/fabianogoes/opentask/fork
 [3]: https://github.com/fabianogoes/opentask/blob/master/LICENSE
-[4]: https://github.com/fabianogoes/opentask/blob/master/doc/mit-license.png
-[5]: https://github.com/fabianogoes/opentask/blob/master/doc/opensource-iniciative.png
+[4]: https://raw.githubusercontent.com/fabianogoes/opentask/master/doc/github-fork-btn.png
+[5]: https://raw.githubusercontent.com/fabianogoes/opentask/master/doc/opensource-iniciative.png
 [6]: https://opensource.org/licenses/MIT
 [7]: https://en.wikipedia.org/wiki/Open_Source_Initiative
-
-
